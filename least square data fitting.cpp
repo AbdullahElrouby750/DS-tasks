@@ -8,7 +8,8 @@ struct Data {
 private: //var
 	int n = 0, choose = 0;
 	double x[30], y[30];
-	double sum_x = 0, sum_y = 0, sum_xx = 0, sum_xy = 0, a = 0, b = 0;
+	double sum_x = 0, sum_y = 0, sum_xx = 0, sum_xy = 0;
+long double a = 0, b = 0;
 public:
 
 	void push()
@@ -141,7 +142,8 @@ private: //fun
 
 	void equ5()
 	{
-		double sum_Y = 0, sum_xY = 0, A = 0, B = 0;
+		double sum_Y = 0, sum_xY = 0;
+		long double A = 0, B = 0;
 
 		cout << " Solve for 'a' & 'b' in 'y =  b / (a + x)'\n";
 
