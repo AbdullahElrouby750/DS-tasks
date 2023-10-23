@@ -127,7 +127,7 @@ private: //fun
 		for (int i = 0; i < n; i++)
 		{
 			sum_X += 1 / x[i];
-			sum_XX += x[i] * x[i];
+			sum_XX += (1 / x[i]) * (1 / x[i]);
 			sum_Xy += (1 / x[i]) * y[i];
 		}
 
