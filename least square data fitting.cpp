@@ -153,7 +153,7 @@ private: //fun
 
 		B = (sum_xY - (sum_x * sum_Y) / n) / (sum_xx - (sum_x * sum_x) / n);
 		
-		A = (sum_Y - sum_x * b) / n;
+		A = (sum_Y - sum_x * B) / n;
 
 		b = 1 / B;
 		a = A * b;
