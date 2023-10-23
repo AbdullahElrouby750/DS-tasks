@@ -86,7 +86,7 @@ private: //fun
 
 		c = (sum_xxy * n - sum_xx * sum_y + ((sum_xxx * sum_x * sum_y * n - sum_xx * sum_x * sum_x * sum_y) / (sum_xx * n - sum_x * sum_x)) - ((sum_xxx * sum_xy * n - sum_xx * sum_x * sum_xy) / (sum_xx - (sum_x * sum_x) / n))) / (sum_xxxx * n - sum_xx * sum_xx + ((sum_xxx * sum_xx * sum_x - sum_xxx * sum_xxx * n) / (sum_xx - (sum_x * sum_x) / n)) + ((sum_xxx * sum_xx * sum_x * n - sum_x * sum_x * sum_xx * sum_xx) / (sum_xx * n - sum_x * sum_x)));
 
-		b = (sum_xy - sum_xxx * c) / (sum_xx - (sum_x * sum_x) / n) - (sum_x * sum_xx * c + sum_x * sum_y) / (sum_xx * n - sum_x * sum_x);
+		b = (sum_xy - sum_xxx * c) / (sum_xx - (sum_x * sum_x) / n) + (sum_x * sum_xx * c - sum_x * sum_y) / (sum_xx * n - sum_x * sum_x);
 
 		a = (sum_y - sum_x * b - sum_xx * c) / n;
 		cout << " a = " << a << "		b = " << b <<"		c = "<< c << endl;
