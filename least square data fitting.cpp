@@ -155,8 +155,8 @@ private: //fun
 		
 		a = (sum_Y - sum_x * b) / n;
 
-		a = A * b;
 		b = 1 / B;
+		a = A * b;
 
 		cout << " a = " << a << "		b = " << b << endl;
 		cout << "the final form of the equ :: y = " << b << " / (" << a << " + x)\n";
