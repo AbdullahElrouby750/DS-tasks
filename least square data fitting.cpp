@@ -151,8 +151,8 @@ private: //fun
 			sum_xY += x[i] * (1 / y[i]);
 		}
 
-		b = (sum_x * sum_Y - sum_xY * n) / (sum_x * sum_x * -sum_xx * n);
-
+		b = (sum_xY - (sum_x * sum_Y) / n) / (sum_xx - (sum_x * sum_x) / n);
+		
 		a = (sum_Y - sum_x * b) / n;
 
 		a = A * b;
