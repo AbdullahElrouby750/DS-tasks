@@ -2,7 +2,6 @@
 #include <string>
 #include <cmath>
 #include <stack>
-#include <cctype>
 
 #define null NULL
 
