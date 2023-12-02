@@ -1,12 +1,13 @@
 #include <iostream>
 #include <string>
+#include <stack>
 
 #define null NULL
 
 using namespace std;
 
 template <class type>
-class ll
+class ll //linked list
 {
 private:
 
@@ -21,7 +22,7 @@ public:
 	ll() : head(null), current(null), temp(null) {}
 
 	bool isempty()
-	{
+	{	
 		return head == null;
 	}
 
@@ -46,7 +47,7 @@ public:
 		current->next = newnode;
 	}
 
-	void traverse()
+	void traverse()//print
 	{
 
 		if (isempty())
@@ -58,7 +59,7 @@ public:
 		current = head;
 
 		cout << "| ";
-		while (current != null)
+		while (current != null)//20 30 40
 		{
 			cout << current->data << " | ";
 			current = current->next;
@@ -66,7 +67,7 @@ public:
 		cout << endl;
 	}
 
-	void delete_item(type value)
+	void delete_item(type value)//20 30 
 	{
 
 		if (isempty())
@@ -77,7 +78,7 @@ public:
 
 		if (head->data == value)
 		{
-			current= head;
+			current = head;
 			head = head->next;
 			delete current;
 			current = null;
@@ -88,14 +89,14 @@ public:
 		{
 			current = current->next;
 		}
-		temp = current->next;
+		temp = current->next;		//c 30  t 40
 		current->next = temp->next;
 
 		delete temp;
 		temp = null;
 	}
 
-	void clear_list()
+	void clear_list()//  
 	{
 		if (isempty())
 			return;
@@ -127,10 +128,10 @@ private:
 	node* top, * temp;
 
 public:
-
+	
 	linked_stack() : top(null), temp(null) {}
 
-	void push(Type value)
+	void push(Type value)// ( 10 <-20 <-30 )
 	{
 		node* newnode = new node;
 		newnode->data = value;
@@ -147,18 +148,13 @@ public:
 			top = newnode;
 		}
 	}
-
-	void pop()
+				//		
+	void pop() //( 10<-20 )  //10
 	{
 		if (isempty())
 		{
 			cout << "This stack is empty!\n";
 			return;
-		}
-		else if (top->next == null)
-		{
-			delete top;
-			top = null;
 		}
 
 		else
@@ -189,7 +185,7 @@ public:
 		}
 
 		temp = top;
-		while (temp != null)
+		while (temp != null)// 10 20 30
 		{
 			cout << "|" << temp->data << "| \n";
 			temp = temp->next;
@@ -241,8 +237,8 @@ public:
 	{
 		return top == (sz - 1);
 	}
-
-	void push(type value)
+							//  0  1  2  3  4  5  6  7  8  9		top=1
+	void push(type value) // [ 10,20, 30 ]
 	{
 		if (isempty())
 		{
@@ -284,7 +280,7 @@ public:
 
 	void display()
 	{
-		for (int i = top; i > -1; i--)
+		for (int i = top; i > -1; i--)//1
 		{
 			cout << "|" << stack[i] << "|" << endl;
 		}
@@ -298,7 +294,7 @@ public:
 
 	~arrayed_stack()
 	{
-		clear_stack();
+		top = -1;
 	}
 };
 
@@ -344,7 +340,7 @@ void linked_stack_app()
 			s.clear();
 			getline(cin, s);
 
-			for (int i=0;i<s.size();i++)
+			for (int i=0;i<s.size();i++)// r o u b y
 			{
 				stack.push(s[i]);
 			}
@@ -387,7 +383,7 @@ void linked_stack_app()
 						else if (s[i] == ']' && stack.Top() == '[')
 							stack.pop();
 						else
-							balanced = false;
+							balanced = false; 
 					}
 				}
 			}
@@ -412,7 +408,6 @@ void linked_stack_app()
 void arrayed_stack_app()
 {
 	arrayed_stack<int> stack;
-
 	stack.push(2);
 	stack.push(10);
 	stack.push(5);
@@ -485,6 +480,4 @@ int main()
 			cout << "Invalid choice!\nPLz, choose again.\n";
 		}
 	}
-
-
 }
