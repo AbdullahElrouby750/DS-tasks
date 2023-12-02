@@ -77,8 +77,10 @@ public:
 
 		if (head->data == value)
 		{
-			delete head;
-			head = null;
+			current= head;
+			head = head->next;
+			delete current;
+			current = null;
 		}
 
 		current = head;
