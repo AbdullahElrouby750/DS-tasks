@@ -69,6 +69,69 @@ public:
 		}
 
 		return queue[front];
+class arrayed_queue
+{
+private:
+	int front, rear;
+	type queue[sz];
+public:
+	arrayed_queue() : front(-1),rear(-1){}
+
+	bool isempty()
+	{
+		return (front == -1);
+	}
+
+	bool isfull()
+	{
+		return (rear == sz-1);
+	}
+
+	void enqueue(type data)
+	{
+		if (isempty())
+		{
+			front = rear = 0;
+			queue[front] = data;
+		}
+
+		else if (isfull())
+		{
+			cout << "This queue is full!\n";
+			return;
+		}
+
+		else
+		{
+			queue[++rear] = data;
+		}
+	}
+
+	void dequeue()
+	{
+		if (isempty())
+		{
+			cout << "This queue is already empty!\n";
+			return;
+		}
+
+		else if (rear == front)
+			rear = front = -1;
+
+		else
+			front++;
+		cout << "front deleted\n";
+	}
+
+	type Front()
+	{
+		if (isempty())
+		{
+			cout << "This queue is empty!\n";
+			return NULL;
+		}
+
+		return queue[front];
 	}
 
 	type Rear()
@@ -91,7 +154,7 @@ public:
 		}
 
 		cout << "Element in this queue [";
-		for (int i = front; i != rear; i = ((i + 1) % sz))
+		for (int i = front; i != rear; i++)
 		{
 			cout << queue[i] << " ";
 		}
