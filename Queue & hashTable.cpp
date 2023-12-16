@@ -212,19 +212,10 @@ private:
 		type data;
 		node* next;
 	};
-	node* chainHead[sz], * current;
-	int key;
+	node* chainHead[sz] = {NULL}, * current=NULL;
+	int key=-1;
 	
 public:
-
-	hash_table(){
-		key = -1;
-		current = NULL;
-		for (int i = 0; i < sz; i++)
-		{
-			chainHead[i] = NULL;
-		}
-	}
 
 	void insert(type data)
 	{
