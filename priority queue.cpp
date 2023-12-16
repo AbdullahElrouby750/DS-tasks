@@ -6,17 +6,15 @@
 using namespace std;
 
 template<class type>
-class priorty_queue {
+struct priorty_queue {
 private:
     struct node {
         type data;
         node* next,* pre;
         int priority=-1;//starting from 0
     };
-    node* front, * rear, * current;
+    node* front=null, * rear=null, * current=null;
 public:
-
-    priorty_queue() : front(null), rear(null), current(null) {}
 
     bool isempty()
     {
