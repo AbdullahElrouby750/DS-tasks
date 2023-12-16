@@ -37,23 +37,23 @@ public:
 
         else // search for the right place // work like a linked list in searching // each priority has a order like a queue
         {
-            if (priority > front->priority)
+            if (priority > front->priority) // if the new data has a higher priority, put it in the front of the queue.
             {
                 newnode->next = front;
                 front = newnode;
             }
 
-            else if (priority <= rear->priority)
+            else if (priority <= rear->priority)// if the new data have a less priority than the rear(least priority in the queue), put it as a rear.
             {
                 rear->next = newnode;
                 newnode->pre = rear;
                 rear = newnode;
             }
 
-            else
+            else // if the new data has a priority that already exist in the queue, search for that priority and insert the data in it's right place (at the end of this priority groub not at the end of the queue)
             {
                 current = front;
-                while (current->next && current->next->priority >= priority)
+                while (current->next->priority >= priority) //update: don't need to check if current.next = null, as this else won't happen anyway if priority is <= least priority.
                     current = current->next;
                 newnode->next = current->next;
                 newnode->pre = current;
@@ -62,7 +62,7 @@ public:
         }
     }
 
-    void dequeueMax()
+    void dequeueMax() // delete first element with high priority (front)
     {
         if (isempty())
         {
@@ -85,7 +85,7 @@ public:
         }
     }
 
-    void dequeueMin()
+    void dequeueMin() // delete last element with least priority (rear)
     {
         if (isempty())
         {
