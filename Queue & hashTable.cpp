@@ -1,4 +1,4 @@
-l#include <iostream>
+#include <iostream>
 
 #define sz 10
 
