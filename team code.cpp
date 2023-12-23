@@ -2,6 +2,7 @@
 #include <string>
 #include <stack>
 #include <cmath>
+#include <algorithm>
 using namespace std;
 #define null nullptr
 #define size 15
