@@ -36,9 +36,9 @@ public:
 	{
 		if (Root != NULL)
 		{
-			pre_order(Root->left);
+			in_order(Root->left);
 			cout << Root->data << "  ";
-			pre_order(Root->right);
+			in_order(Root->right);
 		}
 	}
 
@@ -46,8 +46,8 @@ public:
 	{
 		if (Root != NULL)
 		{
-			pre_order(Root->left);
-			pre_order(Root->right);
+			post_order(Root->left);
+			post_order(Root->right);
 			cout << Root->data << "  ";
 		}
 	}
