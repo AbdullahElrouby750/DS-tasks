@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <stack>
+#include <cmath>
 using namespace std;
 #define null nullptr
 #define size 15
@@ -163,8 +164,17 @@ public:
         }
         else if (root->data == "/")
         {
+        if (right==0)
+        {
+           cout<<"\nERROR! run time error, can't divide over 0\n";
+           return -1;
+         }
             return left / right;
         }
+        else if(root->data=="^")
+       {
+       	return pow(left,right);
+       }
 
         return 0;
     }
@@ -344,3 +354,4 @@ int main()
         return -1;
     }
 }
+
