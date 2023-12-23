@@ -316,7 +316,7 @@ int main()
     
     if (pro.checkPare(expression))
     {
-        cout << "\nTo post-fix {-> " << pro.Postfix(expression) << endl;
+        cout << "\nTo post-fix -> " << pro.Postfix(expression) << endl;
 
         cout << "\nTo pre-fix -> " << pro.prefix(expression) << endl;
 
