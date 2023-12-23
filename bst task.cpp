@@ -76,12 +76,19 @@ public:
 		return false;
 	}
 
-	void Delete(int data)
+	bool Delete(int data)
 	{
 		if (search(data))
-			re_link();
+		{
+				re_link();
+				cout<<endl<<data<<" deleted";
+				return true;
+		}
 		else
-			cout << "\nThis element does not exist in this tree!\n";		
+		{
+			cout << "\nThis element ("<<data<<") does not exist in this tree!\n";
+			return false;
+			}		
 	}
 
 	void pre_order()
@@ -184,31 +191,42 @@ int main()
 	tree.insert(14);
 	tree.insert(13);
 
+cout<<"\nElement in this tree -> ";
 	tree.pre_order();
+
+	if (tree.search(6))
+		cout << "\n6 found in this tree\n";
+	else
+		cout << "\n6 not found in this tree\n";
 
 	if (tree.search(13))
 		cout << "\n13 found in this tree\n";
 	else
 		cout << "\n13 not found in this tree\n";
-
-	if (tree.search(15))
-		cout << "\n15 found in this tree\n";
+			if (tree.search(100))
+		cout << "\n100 found in this tree\n";
 	else
-		cout << "\n15 not found in this tree\n";
+		cout << "\n100 not found in this tree\n";
 
-	tree.Delete(1);
+        if(tree.Delete(3))
+        {
+        cout << "\n";
+	tree.pre_order();	
+        }
+	
+	if(tree.Delete(7))
+	{
+	cout << "\n";
+	tree.pre_order();	
+        }
+	
+	if(tree.Delete(8))
+	{
 	cout << "\n";
 	tree.pre_order();
-	
-	tree.Delete(14);
-	cout << "\n";
-	tree.pre_order();
-	
-	tree.Delete(6);
-	cout << "\n";
-	tree.pre_order();
-	
+        }
 
 
 
 }
+
